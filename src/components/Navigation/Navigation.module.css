@@ -1,0 +1,10 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 767px) {
+  .link {
+    margin-right: 8px;
+  }
+}
