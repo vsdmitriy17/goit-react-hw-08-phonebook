@@ -1,7 +1,7 @@
 import styles from './Filter.module.css';
 import PropTypes from 'prop-types';
 
-export default function Filter({filter, onChange})  {
+export default function Filter({ filter, onChange }) {
     return (
         <label className={styles.filter_label}>
             Filter names
