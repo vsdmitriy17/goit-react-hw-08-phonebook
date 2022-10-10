@@ -1,85 +1,36 @@
-import { useEffect } from 'react';
-
-import { useDispatch, useSelector } from 'react-redux';
-
-import { Suspense } from 'react';
-
-import { ToastContainer } from 'react-toastify';
-
-import 'react-toastify/dist/ReactToastify.css';
-
-import { lazy } from 'react';
-
-import { Route, Routes, Navigate } from 'react-router-dom';
-
-import { PrivateRoute } from '../routes/PrivateRoute';
-
-import PublicRoute from '../routes/PublicRoute';
-
-import { authOperations } from 'redux/auth/auth-operations';
-
-import authSelectors from 'redux/auth/auth-selectors';
-
-import ContentWrap from './ContentWrap';
-
-import Main from './Main';
-
-import Loader from './Loader';
-
-import AppBar from './AppBar';
-
-import Footer from './Footer';
-
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
-
-const LoginPage = lazy(() => import('pages/LoginPage'));
-
-const ContactsPage = lazy(() => import('pages/ContactsPage'));
-
-const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
+import styles from './App.module.css';
+import ContactList from './contactList/ContactList.jsx';
+import ContactForm from './contactForm/ContactForm.jsx';
+import Filter from './filter/Filter.jsx';
+import { useState, useMemo } from 'react';
+import { useAddContactMutation } from '../redux/contactsReducer.js';
+import { useGetContactsQuery } from '../redux/contactsReducer.js';
 
 export default function App() {
-  const dispatch = useDispatch();
-  const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+    const [addContact] = useAddContactMutation();
+    const [filter, setFilter] = useState('');
+    const { data: contacts } = useGetContactsQuery();
 
-  useEffect(() => {
-    dispatch(authOperations.fetchCurrentUser());
-  }, [dispatch]);
+    const createContact = async user => {
+        await addContact(user);
+    };
 
-  return (
-    !isFetchingCurrentUser && (
-      <>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={1000}
-          pauseOnHover={false}
-        />
-        <AppBar />
-        <ContentWrap>
-          <Main>
-            <Suspense fallback={<Loader />}>
-              <Routes>
-                <Route path="/" element={<Navigate to="login" />}></Route>
-                <Route
-                  element={<PublicRoute restricted redirectTo="contacts" />}
-                >
-                  <Route path="login" element={<LoginPage />} />
-                </Route>
-                <Route
-                  element={<PublicRoute restricted redirectTo="contacts" />}
-                >
-                  <Route path="registration" element={<RegisterPage />} />
-                </Route>
-                <Route element={<PrivateRoute redirectTo="login" />}>
-                  <Route path="contacts" element={<ContactsPage />} />
-                </Route>
-                <Route path="*" element={<NotFoundPage />}></Route>
-              </Routes>
-            </Suspense>
-          </Main>
-        </ContentWrap>
-        <Footer />
-      </>
-    )
-  );
+    const filterContacts = useMemo(() => {
+        return (
+            contacts?.filter(item =>
+                item.name.toLowerCase().includes(filter.toLowerCase())
+            ) ?? []
+        );
+    }, [filter, contacts]);
+    
+    return (
+        <div className={styles.container}>
+            <h1 className={styles.title}>Phonebook</h1>
+            <ContactForm onSubmit={createContact}/>
+
+            <h2 className={styles.title}>Contacts</h2>
+            <Filter filter={filter} onChange={setFilter}/>
+            <ContactList item={filterContacts}/>
+        </div>
+    );
 }
