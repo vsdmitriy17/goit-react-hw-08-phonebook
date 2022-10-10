@@ -83,7 +83,7 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'light' ? 'rgb(86, 67, 196)' : '#2b2b2b',
     border: '1px solid #ced4da',
     fontSize: 16,
-    width: 'auto',
+    width: '230px',
     color: 'white',
     padding: '10px 12px',
     transition: theme.transitions.create([
