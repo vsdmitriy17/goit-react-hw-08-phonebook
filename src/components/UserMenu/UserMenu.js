@@ -1,13 +1,8 @@
 import s from './UserMenu.module.css';
-
 import { ButtonCss as Button } from 'UI/stylesUi';
-
 import { ReactComponent as IconUser } from '../../images/user-icon.svg';
-
 import { useSelector, useDispatch } from 'react-redux';
-
 import authSelectors from 'redux/auth/auth-selectors';
-
 import { authOperations } from 'redux/auth/auth-operations';
 
 export default function UserMenu() {

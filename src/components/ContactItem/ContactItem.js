@@ -1,9 +1,6 @@
 import s from './ContactItem.module.css';
-
 import PropTypes from 'prop-types';
-
 import { useDeleteContactMutation } from 'redux/contacts/contactsRtkSlice';
-
 import { ButtonCss as ButtonDelete } from 'UI/stylesUi';
 
 export default function ContactItem({ id, name, phone }) {

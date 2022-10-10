@@ -1,15 +1,9 @@
 import Form from '../../components/Form';
-
 import Contacts from '../../components/Contacts';
-
 import Filter from '../../components/Filter';
-
 import { useState, useMemo } from 'react';
-
 import { useAddContactMutation } from '../../redux/contacts/contactsRtkSlice';
-
 import { useGetContactsQuery } from '../../redux/contacts/contactsRtkSlice';
-
 import s from './ContactsPage.module.css';
 
 export default function ContactsPage() {

@@ -1,5 +1,4 @@
 import s from './Footer.module.css';
-
 import Container from 'components/Container';
 
 export default function Footer(params) {

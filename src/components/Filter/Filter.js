@@ -1,7 +1,5 @@
 import s from './Filter.module.css';
-
 import { BootstrapInput as FilterInput } from 'UI/stylesUi';
-
 import PropTypes from 'prop-types';
 
 export default function Filter({ value, onChange }) {

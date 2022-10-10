@@ -1,11 +1,7 @@
 import s from './Contacts.module.css';
-
 import PropTypes from 'prop-types';
-
 import ContactItem from 'components/ContactItem';
-
 import { useGetContactsQuery } from 'redux/contacts/contactsRtkSlice';
-
 import Loader from 'components/Loader';
 
 const style = {

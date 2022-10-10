@@ -1,5 +1,4 @@
 import { ReactComponent as IconLogo } from '../../images/logo-icon.svg';
-
 import s from './Logo.module.css';
 
 export default function Logo() {

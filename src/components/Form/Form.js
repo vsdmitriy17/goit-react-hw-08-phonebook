@@ -1,17 +1,10 @@
 import s from './Form.module.css';
-
 import PropTypes from 'prop-types';
-
 import { useState } from 'react';
-
 import { toast } from 'react-toastify';
-
 import { useGetContactsQuery } from 'redux/contacts/contactsRtkSlice';
-
 import { BootstrapInput as Input } from 'UI/stylesUi';
-
 import { CssLabel as Label } from 'UI/stylesUi';
-
 import { ButtonContacts as AddButton } from 'UI/stylesUi';
 
 export default function Form({ onSubmit }) {
