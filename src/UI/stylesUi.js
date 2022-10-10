@@ -80,7 +80,7 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     borderRadius: 10,
     position: 'relative',
-    backgroundColor: theme.palette.mode === 'light' ? '#5643c43a' : '#2b2b2b',
+    backgroundColor: theme.palette.mode === 'light' ? 'rgb(86, 67, 196)' : '#2b2b2b',
     border: '1px solid #ced4da',
     fontSize: 16,
     width: 'auto',
