@@ -17,7 +17,7 @@ export default function ContactItem({ id, name, phone }) {
           onClick={() => deleteContact(id)}
           disabled={res.isLoading}
         >
-          Удалить
+          Delete
         </ButtonDelete>
       </li>
     </>
