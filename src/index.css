@@ -1,4 +1,4 @@
-@import-normalize;
+/* @import-normalize; */
 
 body {
   margin: 0;
@@ -38,10 +38,10 @@ h6 {
 }
 
 a.active {
-  color: rgba(69, 144, 243, 0.856);
+  color: rgba(170, 206, 240, 0.856);
 }
 
 a:hover,
 a:focus {
-  color: rgba(69, 144, 243, 0.856);
+  color: rgba(169, 186, 202, 0.856);
 }

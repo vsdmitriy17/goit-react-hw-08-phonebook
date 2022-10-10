@@ -17,13 +17,14 @@
     display: flex;
     width: 250px;
     justify-content: space-between;
+    color: white;
     transition: transform 200ms cubic-bezier(0.17, 0.67, 0.83, 0.67), color 200ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
 .formLabel:hover,
 .formLabel:focus {
     transform: scale(1.05);
-    color: rgb(248, 9, 9);
+    color: rgb(219, 215, 238);
 }
 
 .formInput {
@@ -33,6 +34,7 @@
     width: 170px;
     border-radius: 4px;
     border: 1px solid rgb(23, 23, 23);
+    color: white;
 }
 
 .formBtn {

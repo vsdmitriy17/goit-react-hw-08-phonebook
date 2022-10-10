@@ -1,6 +1,9 @@
 .label {
   display: inline-flex;
   flex-direction: column;
+  background: rgb(86, 67, 196);
+  border-radius: 10px;
+  color: white;
 }
 
 .wrap {

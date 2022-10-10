@@ -1,7 +1,11 @@
 .header {
-  background: #bbcecb;
-  border-radius: 0px 0px 43px 43px;
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  background: rgb(45, 12, 138);
+  border-radius: 10px 10px 0px 0px;
   padding: 20px;
+  color: white;
 }
 
 .container {

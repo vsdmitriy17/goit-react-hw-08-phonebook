@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import InputBase from '@mui/material/InputBase';
 
 import InputLabel from '@mui/material/InputLabel';
+import { withTheme } from '@emotion/react';
 
 export const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
@@ -15,9 +16,11 @@ export const CssTextField = styled(TextField)({
   },
   '& label ': {
     top: '-10%',
+    color: 'rgb(200, 199, 202)',
   },
   '& .MuiInputBase-input': {
     height: '10px',
+    color: 'white',
   },
   '&.MuiFormControl-root:not(:last-child)': {
     marginBottom: '20px',
@@ -29,6 +32,7 @@ export const CssTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       borderColor: 'gray',
+      color: 'white',
     },
   },
 });
@@ -37,8 +41,13 @@ export const Input = styled(TextField)({
   '& label.Mui-focused': {
     top: '-6%',
   },
+  '& label ': {
+    top: '-10%',
+    color: 'rgb(200, 199, 202)',
+  },
   '& .MuiFilledInput-root': {
     maxHeight: '50px',
+    color: 'white',
   },
   '&.MuiFormControl-root:not(:last-child)': {
     marginBottom: '20px',
@@ -48,10 +57,12 @@ export const Input = styled(TextField)({
 export const ButtonCss = styled(Button)({
   '&.MuiButton-root': {
     borderRadius: '10px',
-    padding: '0px',
+    padding: '0px 5px 0px 5px',
     textTransform: 'none',
     marginLeft: '10px',
-    border: '1px solid rgba(25, 118, 210, 0.5);',
+    border: '1px solid rgb(200, 199, 202);',
+    backgroundColor: '',
+    color: 'rgb(200, 199, 202)',
   },
 });
 
@@ -71,12 +82,13 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
     marginBottom: '20px',
   },
   '& .MuiInputBase-input': {
-    borderRadius: 4,
+    borderRadius: 10,
     position: 'relative',
-    backgroundColor: theme.palette.mode === 'light' ? '#fcfcfb' : '#2b2b2b',
+    backgroundColor: theme.palette.mode === 'light' ? '#5643c43a' : '#2b2b2b',
     border: '1px solid #ced4da',
     fontSize: 16,
     width: 'auto',
+    color: 'white',
     padding: '10px 12px',
     transition: theme.transitions.create([
       'border-color',
@@ -106,5 +118,6 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
 export const CssLabel = styled(InputLabel)({
   '&.MuiInputLabel-root': {
     fontSize: '22px',
+    color: 'white',
   },
 });
