@@ -1,13 +1,8 @@
 import { useState } from 'react';
-
 import { Input } from '../../UI/stylesUi';
-
 import Button from '@mui/material/Button';
-
 import s from './RegisterPage.module.css';
-
 import { useDispatch } from 'react-redux';
-
 import { authOperations } from 'redux/auth/auth-operations';
 
 export default function RegisterPage() {

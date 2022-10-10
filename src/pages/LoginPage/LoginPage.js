@@ -1,13 +1,8 @@
 import { useState } from 'react';
-
 import s from './LoginPage.module.css';
-
 import { CssTextField as Input } from '../../UI/stylesUi';
-
 import Button from '@mui/material/Button';
-
 import { useDispatch } from 'react-redux';
-
 import { authOperations } from 'redux/auth/auth-operations';
 
 export default function LoginPage() {

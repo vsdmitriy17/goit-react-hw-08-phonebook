@@ -1,5 +1,4 @@
 import iconNotFound from '../../images/not-page.png';
-
 import s from './NotFound.module.css';
 
 export default function NotFoundPage() {
